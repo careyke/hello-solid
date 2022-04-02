@@ -1,27 +1,21 @@
 import type { Component } from 'solid-js';
+import { createSignal, Show } from 'solid-js'
 
-import logo from './logo.svg';
 import styles from './App.module.css';
 
 const App: Component = () => {
-  const a = 123;
-  console.log(a);
+  const [showGetter, setShow] = createSignal(false)
+
+  const handleClick = () => {
+    setShow((prev) => !prev)
+  }
+
   return (
     <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.ccc
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
+      <button onClick={handleClick}>switch</button>
+      <Show when={showGetter()}>
+        show
+      </Show>
     </div>
   );
 };

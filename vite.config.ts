@@ -6,5 +6,7 @@ export default defineConfig({
   build: {
     target: 'esnext',
     polyfillDynamicImport: false,
+    minify: false,
+    sourcemap: true
   },
 });
