@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "eslint.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+}
